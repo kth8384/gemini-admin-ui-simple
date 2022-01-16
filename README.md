@@ -16,3 +16,10 @@
 ![界面效果](./docs/03.png "UI")
 ![界面效果](./docs/04.png "UI")
 ![界面效果](./docs/05.png "UI")
+
+## 致谢
+开发过程中学习和参考了如下框架，一并感谢
+
+* <a href="https://www.naiveui.com/">Naive UI</a>
+* <a href="https://vvbin.cn/next">VBin admin </a>
+* <a href="https://github.com/honghuangdc/soybean-admin">Soybean Admin</a>
