@@ -3,8 +3,8 @@
 > 免费、开源、不复杂、东西少、好上手。
 
 * vite2 +Vue3+Typescript+pinia+vue router4
-* 前后端动态路由
-* permissions 权限判断
+* 前后端动态路由和权限
+* permissions 权限判断指令
 * 登录和锁屏
-* 四中布局风格
+* 四种布局风格
 * iconify 图标，支持离线和在线使用。
