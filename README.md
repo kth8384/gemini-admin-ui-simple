@@ -11,8 +11,8 @@
 
 
 ## 大概长这样
-![界面效果](/docs/01.png "UI")
-![界面效果](/docs/02.png "UI")
-![界面效果](/docs/03.png "UI")
-![界面效果](/docs/04.png "UI")
-![界面效果](/docs/05.png "UI")
+![界面效果](./docs/01.png "UI")
+![界面效果](./docs/02.png "UI")
+![界面效果](./docs/03.png "UI")
+![界面效果](./docs/04.png "UI")
+![界面效果](./docs/05.png "UI")
