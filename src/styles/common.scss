@@ -1,0 +1,100 @@
+/*!
+ *
+ *  *    Copyright 2020-2021 Luter.me
+ *  *
+ *  *    Licensed under the Apache License, Version 2.0 (the "License");
+ *  *    you may not use this file except in compliance with the License.
+ *  *    You may obtain a copy of the License at
+ *  *
+ *  *      http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  *    Unless required by applicable law or agreed to in writing, software
+ *  *    distributed under the License is distributed on an "AS IS" BASIS,
+ *  *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  *    See the License for the specific language governing permissions and
+ *  *    limitations under the License.
+ *
+ */
+
+//全局公用 css 定义
+// 全局 size 定义
+$mp-sizes: (
+  default: $base-width,
+  sm: calc($base-width / 2),
+  md: $base-width,
+  lg: calc($base-width + calc($base-width / 2)),
+  xl: calc($base-width * 2),
+  xxl: calc($base-width * 3),
+  xxxl: calc($base-width * 4),
+);
+// 产生 margin 和 padding 尺寸
+@each $mp in (padding, margin) {
+  //前缀是 m 或者 p
+  $prefix: "";
+  @if ($mp== "padding") {
+    $prefix: "p";
+  } @else {
+    $prefix: "m";
+  }
+  @each $side in (all, top, bottom, right, left) {
+    //方向，上下左右，或者全部
+    $dir: "";
+    @if ($side== "all") {
+      $dir: "all";
+    } @else if($side== "top") {
+      $dir: "t";
+    } @else if($side== "bottom") {
+      $dir: "b";
+    } @else if($side== "right") {
+      $dir: "r";
+    } @else if($side== "left") {
+      $dir: "l";
+    }
+    //挨个遍历 sizes
+    @each $key, $value in $mp-sizes {
+      //如果方向是全部
+      @if ($side== "all") {
+        //如果是默认尺寸，不要尺寸后缀
+        @if $key== "default" {
+          .#{$prefix} {
+            #{$mp}: $value !important;
+          }
+        } @else {
+          .#{$prefix}-#{$key} {
+            #{$mp}: $value !important;
+          }
+        }
+      } @else {
+        @if $key== "default" {
+          .#{$prefix}#{$dir} {
+            #{$mp}-#{$side}: $value !important;
+          }
+        } @else {
+          .#{$prefix}#{$dir}-#{$key} {
+            #{$mp}-#{$side}: $value !important;
+          }
+        }
+      }
+    }
+  }
+}
+// 字重
+@each $value in 100, 200, 300, 400, 500, 600, 700, 800, 900 {
+  .fw-#{$value} {
+    font-weight: $value !important;
+  }
+}
+//字体大小
+$font-sizes: (
+  sm: calc($base-width / 2),
+  md: $base-width,
+  lg: calc($base-width * 1.5),
+  xl: calc($base-width * 2),
+  xxl: calc($base-width * 2.5),
+  xxxl: calc($base-width * 3),
+);
+@each $key, $value in $font-sizes {
+  .fs-#{$key} {
+    font-size: $value !important;
+  }
+}

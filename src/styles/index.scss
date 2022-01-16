@@ -1,0 +1,110 @@
+/*!
+ *
+ *  *    Copyright 2020-2021 Luter.me
+ *  *
+ *  *    Licensed under the Apache License, Version 2.0 (the "License");
+ *  *    you may not use this file except in compliance with the License.
+ *  *    You may obtain a copy of the License at
+ *  *
+ *  *      http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  *    Unless required by applicable law or agreed to in writing, software
+ *  *    distributed under the License is distributed on an "AS IS" BASIS,
+ *  *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  *    See the License for the specific language governing permissions and
+ *  *    limitations under the License.
+ *
+ */
+
+@import "./transation/index.scss";
+@import "./normalize.scss";
+@import "./common.scss";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  // font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial,
+  //   "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "pingfang SC", "helvetica neue", arial, "hiragino sans gb", "microsoft yahei ui",
+    "microsoft yahei", simsun, sans-serif;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
+  /* 16px*62.5%=10px  */
+  // font-size: 62.5%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+////基础样式定义
+html {
+  body {
+    .icon-spin {
+      -webkit-animation: icon-spin 2s linear infinite;
+      animation: icon-spin 2s linear infinite;
+    }
+    .icon-pulse {
+      -webkit-animation: icon-spin 1s steps(8) infinite;
+      animation: icon-spin 1s steps(8) infinite;
+    }
+    @-webkit-keyframes icon-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+      }
+    }
+
+    @keyframes icon-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+      }
+    }
+    // 页面基础样式,以view-content的 class 统一样式
+    [class*="view-content"] {
+      margin: $base-width $base-width 0 $base-width;
+      border-radius: calc($base-width / 2);
+    }
+    // dropdown 文字截断
+    .n-dropdown-option-body__label {
+      max-width: 200px;
+      word-wrap: normal;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    //鼠标手形
+    .hand {
+      cursor: pointer;
+    }
+    // 表格内文字样式覆盖
+    // .n-data-table .n-data-table-td {
+    //   font-weight: 500;
+    // }
+    //树节点文字
+    .n-tree-node-content__text {
+      font-weight: 500;
+    }
+    //data tables selectioin 列左上角的 zindex
+    .n-data-table .n-data-table-th.n-data-table-th--selection {
+      z-index: 0 !important;
+    }
+  }
+}

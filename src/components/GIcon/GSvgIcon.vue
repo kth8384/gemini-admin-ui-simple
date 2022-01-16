@@ -1,0 +1,103 @@
+<!--
+  - /*
+  -  *    Copyright 2020-2021 Luter.me
+  -  *
+  -  *    Licensed under the Apache License, Version 2.0 (the "License");
+  -  *    you may not use this file except in compliance with the License.
+  -  *    You may obtain a copy of the License at
+  -  *
+  -  *      http://www.apache.org/licenses/LICENSE-2.0
+  -  *
+  -  *    Unless required by applicable law or agreed to in writing, software
+  -  *    distributed under the License is distributed on an "AS IS" BASIS,
+  -  *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  -  *    See the License for the specific language governing permissions and
+  -  *    limitations under the License.
+  -  */
+  -->
+
+<template>
+  <svg
+    class="svg-icon"
+    :class="[$attrs.class, spin && 'svg-icon-spin']"
+    :style="getStyle"
+    aria-hidden="true"
+  >
+    <use :xlink:href="symbolId" />
+  </svg>
+</template>
+<script lang="ts">
+import type { CSSProperties } from "vue";
+export default defineComponent({
+  name: "SvgIcon",
+  props: {
+    prefix: {
+      type: String,
+      default: "icon",
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    size: {
+      type: [Number, String],
+      default: 16,
+    },
+    spin: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props) {
+    const symbolId = computed(() => `#${props.prefix}-${props.name}`);
+
+    const getStyle = computed((): CSSProperties => {
+      const { size } = props;
+      let s = `${size}`;
+      s = `${s.replace("px", "")}px`;
+      return {
+        width: s,
+        height: s,
+      };
+    });
+    return { symbolId, getStyle };
+  },
+});
+</script>
+<style lang="scss" scoped>
+.svg-icon {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: -0.15em;
+  fill: currentColor;
+}
+.svg-icon-spin {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+
+  //  -webkit-animation: spin 1s infinite steps(8);
+  // animation: spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+</style>

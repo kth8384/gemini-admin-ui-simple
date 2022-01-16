@@ -1,0 +1,27 @@
+{
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "i18n-ally.localesPaths": ["src/locales/lang", "src/locales"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.sourceLanguage": "zh-CN",
+  "i18n-ally.displayLanguage": "zh-CN",
+  "i18n-ally.translate.saveAsCandidates": false,
+  "i18n-ally.namespace": true,
+  "i18n-ally.encoding": "utf-8",
+  "i18n-ally.pathMatcher": "{locale}.{ext}",
+  "i18n-ally.enabledParsers": ["json", "ts", "js"],
+  "i18n-ally.extract.autoDetect": true,
+  "i18n-ally.includeSubfolders": true,
+  "i18n-ally.translate.engines": ["google-cn", "google"],
+  "i18n-ally.enabledFrameworks": ["vue", "vue-sfc", "i18next", "vscode"],
+  "i18n-ally.refactor.templates": [
+    {
+      "source": "html-attribute",
+      "templates": ["i18n.t('{key}'{args})", "custom.t('{key}'{args})"],
+      "include": ["src/**/*.{vue,ts,js}", "index.html"],
+      "exclude": ["src/config/**"]
+    }
+  ]
+}

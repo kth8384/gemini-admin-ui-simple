@@ -1,0 +1,136 @@
+{
+  "common": {
+    "backToHome": "Back To Home Page",
+    "cancel": "Cancel",
+    "yes": "Yes"
+  },
+  "hello": "考你鸡娃",
+  "language": "Language",
+  "page": {
+    "NotFound": {
+      "text": "Page Not Found~~"
+    }
+  },
+  "route": {
+    "Home": "Home",
+    "IFrame": "IFrame",
+    "IFrameSelf": "Self Open IFrame",
+    "IFrameBlank": "Open In New Page",
+    "Icons": "Icons",
+    "Index": "Home",
+    "KeepAliveDemo": "KeepAlive Demo",
+    "Lab": "Lab",
+    "Lab1": "Lab-A",
+    "Perms": "Permissions",
+    "Pet": "Pet Store",
+    "PetCat": "Cats",
+    "PetDog": "Dogs",
+    "Settings": "Settings"
+  },
+  "ui": {
+    "common": {
+      "collapsed": "collapsed",
+      "expanded": "expanded",
+      "fixed": "Fixed",
+      "float": "Float",
+      "settings": "Settings"
+    },
+    "header": {
+      "darkTheme": "Dark Theme",
+      "lightTheme": "Light",
+      "lockScreen": "Lock Screen",
+      "setting": "Settings",
+      "userinfo": {
+        "logout": "Logout",
+        "logouttext": "Logout  Now?",
+        "userprofile": "Profile"
+      }
+    },
+    "setting": {
+      "animated": "Animation",
+      "clearCache": "Clear cache and Relogin",
+      "collapedMenuWidth": "Menu Collapsed Width",
+      "darkFooter": "Footer Style",
+      "darkText": "Dark",
+      "disabled": "Disabled",
+      "enabled": "Enabled",
+      "exitFullscreen": "Exit FullScreen",
+      "expandMenuWidth": "Menu Expand Width",
+      "fullscreen": "FullScreen",
+      "headerStyle": "Header Style",
+      "invisiable": "Invisiable",
+      "layout": {
+        "setting": "Layout"
+      },
+      "lightText": "Light",
+      "menuExpandTip": "Left Menu expand width",
+      "palette": "Palette",
+      "resetConfig": "Reset Settings",
+      "showBanner": "Show Banner",
+      "showBreadCrumb": "Show BreadCrum",
+      "showFooter": "Show Footer",
+      "showTabs": "Show Tabs Bar",
+      "sideStyle": "Sider Style",
+      "theme": "Theme",
+      "title": "Settings",
+      "uiStyle": "UI Style Settings",
+      "visiable": "Visiable"
+    }
+  },
+  "views": {
+    "layout": {
+      "header": {
+        "lock": {
+          "errormsg": "Please enter more than 3 digits",
+          "input": {
+            "label": "lock password",
+            "placeHolder": "Please enter lock password"
+          },
+          "modal": {
+            "cancelText": "Cancel",
+            "pText": "Lock Screen",
+            "title": "Lock Screen Now ?"
+          },
+          "tip": "📢:Please remember this password"
+        },
+        "logoutModal": {
+          "question": "You are log out now ,are you confirmed?",
+          "title": "Are you sure?"
+        },
+        "user": {
+          "logout": "Logout",
+          "profile": "Profile"
+        }
+      }
+    },
+    "lock": {
+      "password": "Enter Unlock Password",
+      "reLogin": "ReLogin",
+      "reloginConfirmText": "Logout and Relogin ,A U Sure?",
+      "reloginTip": "Logout and then ReLogin",
+      "unlock": "Un Lock",
+      "unlockTip": "Unlock",
+      "wrongPassword": "wrong unlock password"
+    },
+    "login": {
+      "forgotPassword": "Forgot Password?",
+      "form": {
+        "label": {
+          "captcha": "Captcha",
+          "loginBtnText": "Login",
+          "password": "Password",
+          "username": "UserName"
+        },
+        "loginByMobile": "By Mobile",
+        "loginByQrcode": "By QrCode",
+        "passwordNotnull": "password  can not be null",
+        "register": "Register",
+        "rememberMe": "Remember Me?",
+        "userNameNotNull": "username can not be null"
+      },
+      "success": "Success",
+      "title": "Login",
+      "wellcome": "Wellcome"
+    }
+  }
+}

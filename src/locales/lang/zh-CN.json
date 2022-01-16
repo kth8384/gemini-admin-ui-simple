@@ -1,0 +1,136 @@
+{
+  "common": {
+    "backToHome": "返回首页",
+    "cancel": "取消",
+    "yes": "确定"
+  },
+  "hello": "你好啊",
+  "language": "语言",
+  "page": {
+    "NotFound": {
+      "text": "页面飞了~!!"
+    }
+  },
+  "route": {
+    "Home": "首页",
+    "IFrame": "IFrame",
+    "IFrameBlank": "新页面打开",
+    "IFrameSelf": "本页打开",
+    "Icons": "图标",
+    "Index": "首页",
+    "KeepAliveDemo": "KeepAlive例子",
+    "Lab": "实验室",
+    "Lab1": "实验室-A",
+    "Perms": "权限",
+    "Pet": "宠物商店",
+    "PetCat": "猫咪",
+    "PetDog": "旺财",
+    "Settings": " 设置"
+  },
+  "ui": {
+    "common": {
+      "collapsed": "收起",
+      "expanded": "展开",
+      "fixed": "固定",
+      "float": "浮动",
+      "settings": "设置"
+    },
+    "header": {
+      "darkTheme": "深色主题",
+      "lightTheme": "浅色主题",
+      "lockScreen": "锁定屏幕",
+      "setting": "设置",
+      "userinfo": {
+        "logout": "退出登录",
+        "logouttext": "要注销吗?",
+        "userprofile": "个人资料"
+      }
+    },
+    "setting": {
+      "animated": "动画设置",
+      "clearCache": "清空缓存重新登录",
+      "collapedMenuWidth": "菜单收起宽度",
+      "darkFooter": "页脚风格",
+      "darkText": "暗色",
+      "disabled": "关闭",
+      "enabled": "开启",
+      "exitFullscreen": "退出全屏",
+      "expandMenuWidth": "菜单展开宽度",
+      "fullscreen": "全屏",
+      "headerStyle": "导航栏风格",
+      "invisiable": "不显示",
+      "layout": {
+        "setting": "布局"
+      },
+      "lightText": "亮色",
+      "menuExpandTip": "左侧菜单展开宽度",
+      "palette": "调色盘",
+      "resetConfig": "重置设置",
+      "showBanner": "显示 Logo",
+      "showBreadCrumb": "显示面包屑导航",
+      "showFooter": "显示页脚",
+      "showTabs": "显示标签页",
+      "sideStyle": "侧边栏风格",
+      "theme": "主题",
+      "title": "设置",
+      "uiStyle": "界面风格设置",
+      "visiable": "显示"
+    }
+  },
+  "views": {
+    "layout": {
+      "header": {
+        "lock": {
+          "errormsg": "请输入超过 3 位的锁屏口令",
+          "input": {
+            "label": "锁屏口令:",
+            "placeHolder": "请输入锁屏口令"
+          },
+          "modal": {
+            "cancelText": "算了 ",
+            "pText": "锁定",
+            "title": "锁屏确认"
+          },
+          "tip": "📢:请记住这个口令,解锁的时候需要"
+        },
+        "logoutModal": {
+          "question": "你确定退出系统吗？",
+          "title": "退出确认"
+        },
+        "user": {
+          "logout": "退出登录",
+          "profile": "用户资料"
+        }
+      }
+    },
+    "lock": {
+      "password": "请输入解锁口令",
+      "reLogin": "重新登录",
+      "reloginConfirmText": "确定注销并重新登录吗?",
+      "reloginTip": "注销后重新登录",
+      "unlock": "解锁",
+      "unlockTip": "解锁",
+      "wrongPassword": "请输入正确的解锁口令"
+    },
+    "login": {
+      "forgotPassword": "忘记密码?",
+      "form": {
+        "label": {
+          "captcha": "图形验证码",
+          "loginBtnText": "登  录",
+          "password": "密码",
+          "username": "用户名"
+        },
+        "loginByMobile": "短信登录",
+        "loginByQrcode": "二维码登录",
+        "passwordNotnull": "密码不能为空",
+        "register": "注 册",
+        "rememberMe": "记住我",
+        "userNameNotNull": "用户名不能为空"
+      },
+      "success": "成功",
+      "title": "登录",
+      "wellcome": "欢迎您,"
+    }
+  }
+}
