@@ -30,7 +30,7 @@
 ### 打包构建
 
 ```shell
-# yarn dev
+# yarn build
 ```
 
 ## 大概长这样

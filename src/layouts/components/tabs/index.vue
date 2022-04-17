@@ -168,9 +168,9 @@ function handleContextMenu(e: any, item: any) {
 }
 //刷新页面
 const reloadPage = async () => {
-    const { currentRoute } = router;
-    const route: any = unref(currentRoute);
-    tabsStore.closeCurrentTabs(route);
+    // const { currentRoute } = router;
+    // const route: any = unref(currentRoute);
+    // tabsStore.closeCurrentTabs(route);
     const redirectTo = useRedirect(router);
     await redirectTo();
 };

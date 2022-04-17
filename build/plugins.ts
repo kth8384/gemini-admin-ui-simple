@@ -27,7 +27,7 @@ import PurgeIcons from "vite-plugin-purge-icons";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
 import compressPlugin from "vite-plugin-compression";
 // import pkg from "../package.json";
-import html from "vite-plugin-html";
+import { createHtmlPlugin } from "vite-plugin-html";
 /**
  * 注册 Vite 插件
  * @param envConfig 环境配置
@@ -57,11 +57,10 @@ export function createVitePlugins(envConfig: EnvConfigType, isBuild: boolean) {
         {
           type: "component",
           resolve: (name: string) => {
-            //n-el fullname is n-element?
             if ("NEl" === name) {
               name = "NElement";
             }
-            if (name.match(/^N[A-Z]/)) return { importName: name, path: "naive-ui" };
+            if (name.match(/^(N[A-Z]|n-[a-z])/)) return { name, from: "naive-ui" };
           },
         },
       ],
@@ -129,7 +128,7 @@ function configHtmlPlugin(env: EnvConfigType, isBuild: boolean) {
   const getAppConfigSrc = () => {
     return `/app.config.js?v=${new Date().getTime()}`;
   };
-  const htmlPlugin: Plugin[] = html({
+  const htmlPlugin = createHtmlPlugin({
     minify: isBuild,
     inject: {
       // Inject data into ejs template
@@ -147,5 +146,5 @@ function configHtmlPlugin(env: EnvConfigType, isBuild: boolean) {
       ],
     },
   });
-  return htmlPlugin;
+  return htmlPlugin as Plugin[];
 }
