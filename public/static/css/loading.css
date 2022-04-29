@@ -22,9 +22,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial,
-    "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: radial-gradient(circle farthest-corner at center, #ddd 0%, #fff 100%);
