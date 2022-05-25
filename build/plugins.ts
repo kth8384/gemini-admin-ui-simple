@@ -26,6 +26,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import PurgeIcons from "vite-plugin-purge-icons";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
 import compressPlugin from "vite-plugin-compression";
+import { VitePWA } from "vite-plugin-pwa";
 // import pkg from "../package.json";
 import { createHtmlPlugin } from "vite-plugin-html";
 /**
@@ -40,6 +41,33 @@ export function createVitePlugins(envConfig: EnvConfigType, isBuild: boolean) {
   const vitePlugins: (Plugin | Plugin[])[] = [
     vue(),
     vueJsx(),
+    VitePWA({
+      includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "apple-touch-icon.png"],
+      manifest: {
+        name: "LuterName",
+        short_name: "LuterSTName",
+        description: "Luter DESC",
+        theme_color: "#ffffff",
+        icons: [
+          {
+            src: "pwa-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
+      },
+    }),
     //vue SFC name support
     vueSetupExtend(),
     AutoImport({

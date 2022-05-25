@@ -17,6 +17,10 @@
  */
 
 import { createApp } from "vue";
+// 通用字体 v-sans
+// import "vfonts/FiraCode.css";
+// 等宽字体 v-mono
+// import 'vfonts/FiraCode.css'
 import App from "./App.vue";
 import GAppProvider from "./components/GApp/GAppProvider.vue";
 //custom style

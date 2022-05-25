@@ -21,7 +21,7 @@ import { SysMessages } from "./../../src/api/BaseApi";
 const allUser = [
   {
     id: 1,
-    username: "user",
+    username: "luter",
     nickname: "张无忌",
     slogan: "歌神的世界,精彩依旧~~~",
     tags: ["牛人", "吃货", "死胖子", "码畜"],
