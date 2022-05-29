@@ -45,4 +45,4 @@ setupI18n(app);
 setUpErrorhandler(app);
 // all directives
 setupGlobalDirectives(app);
-app.mount("#app");
+// app.mount("#app");
