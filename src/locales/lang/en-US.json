@@ -25,7 +25,9 @@
     "Pet": "Pet Store",
     "PetCat": "Cats",
     "PetDog": "Dogs",
-    "Settings": "Settings"
+    "Settings": "Settings",
+    "Echarts": "Echarts",
+    "EchartsHook": "Echarts Hook"
   },
   "ui": {
     "common": {

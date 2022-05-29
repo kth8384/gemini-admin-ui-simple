@@ -17,7 +17,7 @@
   -->
 
 <template>
-  <n-h3 class="title pl-xl">{{ appName }}</n-h3>
+  <n-h3 class="title pl">{{ appName }}</n-h3>
 </template>
 <script setup lang="ts">import { getAppConfig } from '@/config';
 
@@ -31,6 +31,7 @@ const appName = getAppConfig().VITE_APP_NAME;
   overflow: hidden;
   font-size: var(--font-size);
   margin: 0;
-  text-align: center;
+  text-align: left;
+  width: 150px;
 }
 </style>

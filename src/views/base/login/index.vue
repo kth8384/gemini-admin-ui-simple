@@ -71,9 +71,9 @@ import LoginForm from "./LoginForm.vue";
 import RegisterForm from "./RegisterForm.vue";
 import { useThemeVars } from "naive-ui";
 import { useNaive } from "@/hooks/useNaive";
-const { getNaiveThemeOverrides } = useNaive();
 import { useSettingsStore } from "@/store/modules/settings";
 import { getAppConfig } from "@/config";
+const { getNaiveThemeOverrides } = useNaive();
 const themeVars = useThemeVars();
 const settingStore = useSettingsStore();
 const leftBgImage = computed(() => {

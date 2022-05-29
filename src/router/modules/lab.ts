@@ -75,6 +75,14 @@ export default [
         name: "Perms",
         component: () => import("@/views/lab/Perm.vue"),
       },
+      {
+        path: "echarts",
+        meta: {
+          icon: "fa-solid:users",
+        },
+        name: "Echarts",
+        component: () => import("@/views/lab/echarts.vue"),
+      },
     ],
   },
 ];

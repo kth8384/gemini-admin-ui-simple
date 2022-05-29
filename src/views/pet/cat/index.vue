@@ -92,7 +92,7 @@
                 :loading="data.table.loading"
                 :columns="data.table.columns"
                 :data="data.table.items"
-                :row-key="(row) => row.id"
+                :row-key="(row:any) => row.id"
                 :pagination="data.table.pagination"
                 @update:checked-row-keys="handleRowChecked"
             />

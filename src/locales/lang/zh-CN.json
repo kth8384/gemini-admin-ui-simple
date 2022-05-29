@@ -25,7 +25,9 @@
     "Pet": "宠物商店",
     "PetCat": "猫咪",
     "PetDog": "旺财",
-    "Settings": " 设置"
+    "Settings": " 设置",
+    "Echarts": "Echarts",
+    "EchartsHook": "Echarts Hook"
   },
   "ui": {
     "common": {

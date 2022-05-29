@@ -19,7 +19,7 @@
 <template>
   <div>
     <router-view v-slot="{ Component, route }">
-      <transition v-if="settings.animated" :name="route.meta?.transition || 'fade'">
+      <transition v-if="settings.animated" :name="route.meta?.transition as string || 'fade'">
         <keep-alive :include="[...keepAliveRoutes]">
           <component :is="Component" />
         </keep-alive>

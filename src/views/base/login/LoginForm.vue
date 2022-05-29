@@ -115,7 +115,7 @@ const data = reactive({
   redirect: "",
   form: {
     data: {
-      username: "user",
+      username: "luter",
       password: "123456",
       rememberMe: false,
       captcha: "abcd",

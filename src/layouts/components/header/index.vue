@@ -38,7 +38,6 @@
 </template>
 <script setup lang="ts">
 import { getThemeConfig } from "@/config";
-import { useNaive } from "@/hooks/useNaive";
 import { useSettingsStore } from "@/store/modules/settings";
 import { propDefine } from "@/utils/propsDefine";
 import {
@@ -62,7 +61,6 @@ defineProps({
   hideRight: propDefine.bool.def(false),
 });
 const headerHeight = getThemeConfig().headerHeight
-const { themeVars } = useNaive();
 </script>
 <style lang="scss" scoped>
 .layout-header {

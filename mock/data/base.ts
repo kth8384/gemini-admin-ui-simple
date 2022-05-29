@@ -119,6 +119,18 @@ const compRoutes = [
         name: "Icons",
         component: "lab/Icon",
       },
+      {
+        path: "echarts",
+        icon: "fa-solid:dove",
+        name: "Echarts",
+        component: "lab/echarts",
+      },
+      {
+        path: "echartsHook",
+        icon: "fa-solid:dove",
+        name: "EchartsHook",
+        component: "lab/echarts-hook",
+      },
     ],
   },
 ];
