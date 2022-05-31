@@ -22,8 +22,6 @@ import { useUserStoreOutSetUp } from "@/store/modules/user";
 import config, { getAppConfig } from "@/config";
 import { useRouterStoreOutSetUp } from "@/store/modules/router";
 import { NotFoundPageRouteSepPage } from ".";
-import { useSweetAlert } from "@/hooks/useSweetAlert";
-const { fire } = useSweetAlert();
 export function regRouterGuide(router: Router) {
   if (!router) return;
   router.beforeEach(async (to, from, next) => {
@@ -98,10 +96,11 @@ export function regRouterGuide(router: Router) {
   });
   router.onError((error, to, from) => {
     window.$loadingBar.finish();
-    fire({
-      icon: "error",
+    window.$notify.error({
+      closable: true,
+      duration: 60000,
       title: error.name || "Error",
-      text: `打开页面 [${to.fullPath}] 出现错误.原因: ${error.message}`,
+      content: `打开页面 [${to.fullPath}] 出现错误.原因: ${error.message}`,
     });
     console.error("加载路由错误:", error, to, from);
   });

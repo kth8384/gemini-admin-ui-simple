@@ -16,31 +16,26 @@
  *
  */
 
-import Swal from "sweetalert2";
-import "sweetalert2/src/sweetalert2.scss";
 import { App, ComponentPublicInstance } from "vue";
 export function handleError(err: any, vm: ComponentPublicInstance, info: string) {
   console.error("错误", info);
   console.error("错误", err);
   console.error("错误", vm);
-  Swal.fire({
-    icon: "error",
+  window.$notify.error({
     title: "错误",
-    text: err?.message,
+    closable: true,
+    duration: 60000,
+    content: err?.message,
   });
 }
 export function handleWarn(msg: string, vm: ComponentPublicInstance, trace: string) {
   // `trace` 是组件的继承关系追踪
   console.warn("错误", msg, vm, trace);
-  const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000,
-  });
-  Toast.fire({
-    icon: "warning",
+  window.$notify.error({
     title: msg,
+    closable: true,
+    duration: 60000,
+    content: msg,
   });
 }
 

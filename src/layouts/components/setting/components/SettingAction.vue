@@ -44,16 +44,14 @@
 </template>
 <script setup lang="ts">
 import { SysIcons } from "@/enum/iconEnum";
-import { useSweetAlert } from "@/hooks/useSweetAlert";
 import { useSettingsStore } from "@/store/modules/settings";
 import { useUserStore } from "@/store/modules/user";
 const settings = useSettingsStore();
 const userStore = useUserStore()
-const { toast } = useSweetAlert()
 //重置
 const handleResetSetting = () => {
     settings.resetSettings();
-    toast('重设成功')
+    window.$message.success('重设成功')
 };
 //重置并且重新登录
 const handleResetAndReLogin = async () => {

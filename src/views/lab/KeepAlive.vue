@@ -26,7 +26,8 @@
         </n-card>
     </div>
 </template>
-<script setup lang="ts"  name="KeepAliveDemo">
+<!--name="KeepAliveDemo"就是组件名称-->
+<script setup lang="ts" name="KeepAliveDemo">
 const value = ref();
 </script>
 <style lang="css" scoped></style>

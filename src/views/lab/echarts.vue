@@ -31,7 +31,7 @@
 </template>
 <script setup lang="ts">
 import * as echarts from 'echarts/core';
-import theme from './dark';
+import theme from './theme-dark';
 import { CanvasRenderer } from 'echarts/renderers';
 import {
   TitleComponent,

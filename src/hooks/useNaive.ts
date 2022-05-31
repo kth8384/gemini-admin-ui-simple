@@ -23,23 +23,12 @@ import {
   enUS,
   dateZhCN,
   dateEnUS,
-  useMessage,
-  useNotification,
   useThemeVars,
 } from "naive-ui";
 import { computed } from "vue";
 import { brightenColor } from "@/utils/colorUtil";
 const settings = useSettingsStoreOutSetUp();
 export function useNaive() {
-  function regMessagePlugin() {
-    window.$message = useMessage();
-  }
-  /**
-   * 把 Notification 组件注册到 window上，全局使用
-   */
-  function regNotificationPlugin() {
-    window.$notify = useNotification();
-  }
   const getNaiveLocale = computed(() => {
     const lang = settings.getLang;
     switch (lang) {
@@ -128,8 +117,6 @@ export function useNaive() {
   const getNaiveDarkTheme = computed(() => (settings.getDarkTheme ? darkTheme : undefined));
 
   return {
-    regMessagePlugin,
-    regNotificationPlugin,
     getNaiveDarkTheme,
     getNaiveDateLocale,
     getNaiveLocale,

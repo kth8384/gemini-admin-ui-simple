@@ -39,12 +39,10 @@ import { useSettingsStore } from "@/store/modules/settings";
 import { useRouterStore } from "@/store/modules/router";
 import { renderMenuIcon, renderMenuLabel, renderMenuExtra } from "./menuHelper";
 import { openWindow } from "@/utils";
-import { useSweetAlert } from "@/hooks/useSweetAlert";
 const settings = useSettingsStore();
 const routerStore = useRouterStore();
 const router = useRouter();
 const currentRoute = useRoute();
-const { fireError, toast } = useSweetAlert();
 const matched = currentRoute.matched;
 const data = reactive({
   selected: "",
@@ -54,7 +52,6 @@ const onMenuSelect = (key: string, item: any) => {
   console.log("菜单点击", key, item);
   //就在这页面
   if (item.name === currentRoute.name) {
-    toast("手速不错~");
     return;
   }
   try {
@@ -71,7 +68,11 @@ const onMenuSelect = (key: string, item: any) => {
     });
   } catch (error: any) {
     console.error("名字:", error.name, "错误:", error.message);
-    fireError(error.message || "打开页面失败", error.name || "错误");
+    window.$notify.error({
+      title: error.name,
+      content: error.message,
+    });
+    
   }
 };
 const menuExpanded = (openKeys: string[]) => {

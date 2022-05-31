@@ -131,6 +131,18 @@ const compRoutes = [
         name: "EchartsHook",
         component: "lab/echarts-hook",
       },
+      {
+        path: "gdpMap",
+        icon: "fa-solid:dove",
+        name: "GdpMap",
+        component: "lab/gdp-map",
+      },
+      {
+        path: "airMap",
+        icon: "fa-solid:dove",
+        name: "AirMap",
+        component: "lab/air-map",
+      },
     ],
   },
 ];
