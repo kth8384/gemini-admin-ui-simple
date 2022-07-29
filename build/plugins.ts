@@ -74,25 +74,27 @@ export function createVitePlugins(envConfig: EnvConfigType, isBuild: boolean) {
       imports: ["vue", "@vueuse/core", "vue-router", "pinia"],
       dts: "src/auto-imports.d.ts",
     }),
-    Components({
-      // dirs: ["src/components"],
-      deep: true,
-      dts: "src/auto-components.d.ts",
-      resolvers: [
-        //auto import Naive UI Components
-        //https://github.com/antfu/unplugin-vue-components
-        //全局引入的话，就不需要这里自动组件注册了
-        {
-          type: "component",
-          resolve: (name: string) => {
-            if ("NEl" === name) {
-              name = "NElement";
-            }
-            if (name.match(/^(N[A-Z]|n-[a-z])/)) return { name, from: "naive-ui" };
+    Components(
+      {
+        // dirs: ["src/components"],
+        deep: true,
+        dts: "src/auto-components.d.ts",
+        resolvers: [
+          //auto import Naive UI Components
+          //https://github.com/antfu/unplugin-vue-components
+          //全局引入的话，就不需要这里自动组件注册了
+          {
+            type: "component",
+            resolve: (name: string) => {
+              if ("NEl" === name) {
+                name = "NElement";
+              }
+              if (name.match(/^(N[A-Z]|n-[a-z])/)) return { name, from: "naive-ui" };
+            },
           },
-        },
-      ],
-    }),
+        ],
+      },
+    ),
     PurgeIcons({ iconSource: "local" }),
   ];
   //mock
