@@ -46,6 +46,8 @@ declare module '@vue/runtime-core' {
     NH2: typeof import('naive-ui')['NH2']
     NH3: typeof import('naive-ui')['NH3']
     NH4: typeof import('naive-ui')['NH4']
+    NH5: typeof import('naive-ui')['NH5']
+    NH6: typeof import('naive-ui')['NH6']
     NInput: typeof import('naive-ui')['NInput']
     NInputGroup: typeof import('naive-ui')['NInputGroup']
     NInputNumber: typeof import('naive-ui')['NInputNumber']

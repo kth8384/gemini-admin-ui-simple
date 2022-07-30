@@ -1,19 +1,27 @@
 <template>
-  <n-space :vertical="props.vertical" v-model="selected">
-    <n-tag
-      v-bind="attrs"
-      v-for="item in props.options"
-      :checked="selected.includes(item.value)"
-      checkable
-      @update:checked="onCheck(item)"
-    >
-      {{ item.label }}
-    </n-tag>
-  </n-space>
+  <n-grid :x-gap="10" :y-gap="5" :cols="24">
+    <n-grid-item :span="props.label && props.label.length ? 2 : 0">
+      <n-space justify="center" align="center">
+        <n-h5 v-if="props.label && props.label.length">{{props.label}}</n-h5>
+      </n-space>
+    </n-grid-item>
+    <n-grid-item :span="props.label && props.label.length ? 22 : 24">
+      <n-space :vertical="props.vertical" v-model="selected">
+        <n-tag v-bind="attrs" v-for="item in props.options" :checked="selected.includes(item.value)" checkable
+          @update:checked="onCheck(item)">
+          {{ item.label }}
+        </n-tag>
+      </n-space>
+    </n-grid-item>
+  </n-grid>
 </template>
 <script setup lang="ts">
 const attrs = useAttrs();
 const props = defineProps({
+  label: {
+    type: String,
+    default: "",
+  },
   modelValue: {
     type: Array,
     default: [] as string[],
@@ -55,4 +63,5 @@ watch(
   }
 );
 </script>
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+</style>

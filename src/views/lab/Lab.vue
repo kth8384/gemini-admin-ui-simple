@@ -20,17 +20,15 @@
   <div class="lab-view-content">
     <n-card>
       <n-space>
-        <n-button type="primary" size="medium" @click="onTest">测试</n-button>
-        <g-tag-group
-          round
-          multiple
-          v-model="data.selected"
-          :options="options"
-          size="small"
-          @update:model-value="onUpdate"
-        ></g-tag-group>
+        <g-tag-group label="测试1:" round multiple v-model="data.selected" :options="options" size="small"
+          @update:model-value="onUpdate"></g-tag-group>
+        <g-tag-group label="测试2:" v-model="data.selected" :options="options" size="small"
+          @update:model-value="onUpdate"></g-tag-group>
       </n-space>
-      <n-text>{{ data.selected.join(",") }}</n-text>
+      <n-space vertical class="mt-xxl">
+        <n-text>{{ data.selected.join(",") }}</n-text>
+        <n-button type="primary" size="medium" @click="onTest">测试</n-button>
+      </n-space>
     </n-card>
   </div>
 </template>
@@ -78,13 +76,14 @@ const options = [
   {
     label: "标签十",
     value: "tag-10",
-  },
+  }, 
 ];
 const onUpdate = () => {
-  console.log(data.selected.join(","));
+  console.log("update value:", data.selected.join(","));
 };
 const onTest = () => {
   data.selected = ["tag-2"];
 };
 </script>
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+</style>
