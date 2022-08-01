@@ -29,7 +29,7 @@ LayoutMap.set("EMPTYLAYOUT", EmptyLayout);
 LayoutMap.set("IFRAMELAYOUT", IFrameLayout);
 export function getServerRoutes(routes: any[]): any[] {
   if (!routes) return [];
-  const modules = import.meta.glob("../views/**/*.{vue,tsx}");
+  const modules:any = import.meta.glob("../views/**/*.{vue,tsx}");
   return routes.map((route) => {
     if (!route.component && route.meta?.frameSrc) {
       route.component = "IFRAMELAYOUT";
@@ -107,7 +107,7 @@ function serverDataTransformer(route: any) {
 }
 export function getClientRoutes() {
   ///这个方式，顺序是个问题，写一个文件里，顺序可以保证
-  const modules = import.meta.globEager("../router/modules/**/*.ts");
+  const modules:any = import.meta.glob("../router/modules/**/*.ts", {eager:true});
   const routesItems: RouteRecordRaw[] = [];
   Object.keys(modules).forEach((key) => {
     const mod = modules[key].default || {};

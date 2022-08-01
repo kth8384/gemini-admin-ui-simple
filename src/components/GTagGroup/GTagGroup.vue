@@ -1,8 +1,8 @@
 <template>
-  <n-grid :x-gap="10" :y-gap="5" :cols="24">
+  <n-grid :x-gap="10" :y-gap="10" :cols="24">
     <n-grid-item :span="props.label && props.label.length ? 2 : 0">
-      <n-space justify="center" align="center">
-        <n-h5 v-if="props.label && props.label.length">{{props.label}}</n-h5>
+      <n-space justify="start" align="center">
+        <n-text v-if="props.label && props.label.length"><b>{{ props.label }}</b></n-text>
       </n-space>
     </n-grid-item>
     <n-grid-item :span="props.label && props.label.length ? 22 : 24">
@@ -20,7 +20,7 @@ const attrs = useAttrs();
 const props = defineProps({
   label: {
     type: String,
-    default: "",
+    default: null,
   },
   modelValue: {
     type: Array,

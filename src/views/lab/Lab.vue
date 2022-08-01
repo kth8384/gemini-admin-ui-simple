@@ -19,22 +19,23 @@
 <template>
   <div class="lab-view-content">
     <n-card>
-      <n-space>
-        <g-tag-group label="测试1:" round multiple v-model="data.selected" :options="options" size="small"
-          @update:model-value="onUpdate"></g-tag-group>
-        <g-tag-group label="测试2:" v-model="data.selected" :options="options" size="small"
-          @update:model-value="onUpdate"></g-tag-group>
-      </n-space>
+      <g-tag-group label="测试11111111:" multiple v-model="data.selected" :options="options" size="small"
+        @update:model-value="onUpdate">
+      </g-tag-group>
+      <n-divider dashed></n-divider>
+      <g-tag-group label="测试222222:" v-model="data.selected" :options="options" size="small"
+        @update:model-value="onUpdate">
+      </g-tag-group>
       <n-space vertical class="mt-xxl">
         <n-text>{{ data.selected.join(",") }}</n-text>
-        <n-button type="primary" size="medium" @click="onTest">测试</n-button>
+        <n-button type="primary" size="medium" @click="() => { data.selected = [] }">测试</n-button>
       </n-space>
     </n-card>
   </div>
 </template>
 <script setup lang="ts">
 const data = reactive({
-  selected: ["tag-1"] as string[],
+  selected: [] as string[],
 });
 const options = [
   {
@@ -76,13 +77,51 @@ const options = [
   {
     label: "标签十",
     value: "tag-10",
-  }, 
+  },
+  {
+    label: "标签十一",
+    value: "tag-11",
+  },
+  {
+    label: "标签十二",
+    value: "tag-12",
+  },
+  {
+    label: "标签十三",
+    value: "tag-13",
+  },
+  {
+    label: "标签十四",
+    value: "tag-14",
+  },
+  {
+    label: "标签十五",
+    value: "tag-15",
+  },
+  {
+    label: "标签十六",
+    value: "tag-16",
+  },
+  {
+    label: "标签十七",
+    value: "tag-17",
+  },
+  {
+    label: "标签十八",
+    value: "tag-18",
+  },
+  {
+    label: "标签十九",
+    value: "tag-19",
+  },
+  {
+    label: "标签二十",
+    value: "tag-20",
+  },
 ];
-const onUpdate = () => {
+const onUpdate = (value: any[]) => {
   console.log("update value:", data.selected.join(","));
-};
-const onTest = () => {
-  data.selected = ["tag-2"];
+  console.log("update value1:", value.join(","));
 };
 </script>
 <style lang="css" scoped>
