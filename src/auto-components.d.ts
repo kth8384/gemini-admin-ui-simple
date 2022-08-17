@@ -7,8 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    GAppProvider: typeof import('./components/GApp/GAppProvider.vue')['default']
-    GGlobalComponents: typeof import('./components/GApp/GGlobalComponents.vue')['default']
     GIcon: typeof import('./components/GIcon/index.vue')['default']
     GIconifyIcon: typeof import('./components/GIcon/GIconifyIcon.vue')['default']
     GSvgIcon: typeof import('./components/GIcon/GSvgIcon.vue')['default']

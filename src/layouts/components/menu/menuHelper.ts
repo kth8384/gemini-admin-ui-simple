@@ -28,7 +28,8 @@ export const renderMenuIcon = (route: any) => {
 //渲染菜单文字
 export const renderMenuLabel = (route: any) => {
   const key = "route." + route.name;
-  const trasLabel = lang.global.t(key as string);
+  const { t } = lang.global as any;
+  const trasLabel = t(key as string);
   const label = trasLabel ? trasLabel : route.name;
   return h(NEllipsis, { tooltip: false }, { default: () => label });
 };

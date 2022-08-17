@@ -90,7 +90,8 @@ export function regRouterGuide(router: Router) {
   router.afterEach((to) => {
     window.$loadingBar.finish();
     const name = to.name as string;
-    const trans = i18n.global.t("route." + name);
+    const { t } = i18n.global as any;
+    const trans = t("route." + name);
     const appName = getAppConfig().VITE_APP_NAME;
     useTitle((trans || (to.name as string)) + "| " + appName);
   });

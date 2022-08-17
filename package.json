@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite --open",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "serve": "vite preview",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "clean:libs": "rimraf node_modules"

@@ -26,11 +26,8 @@
           <n-layout-header v-if="settings.showTabsBar" bordered>
             <g-tabs></g-tabs>
           </n-layout-header>
-          <n-layout
-            :native-scrollbar="false"
-            position="absolute"
-            :class="[settings.showTabsBar ? 'content' : '', settings.showFooter ? 'footer' : '']"
-          >
+          <n-layout :native-scrollbar="false" position="absolute"
+            :class="[settings.showTabsBar ? 'content' : '', settings.showFooter ? 'footer' : '']">
             <g-content></g-content>
             <n-back-top :right="40" :bottom="120" />
           </n-layout>
@@ -52,10 +49,13 @@ const footerHeight = getThemeConfig().footerHeight;
 <style lang="scss" scoped>
 .layout-container {
   top: v-bind(headerHeight);
+  margin-top: 1px;
 }
+
 .content {
   top: v-bind(tabHeight);
 }
+
 .footer {
   bottom: v-bind(footerHeight);
 }
