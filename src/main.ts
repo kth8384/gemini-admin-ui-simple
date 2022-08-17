@@ -22,7 +22,6 @@ import { createApp } from "vue";
 // 等宽字体 v-mono
 // import 'vfonts/FiraCode.css'
 import App from "./App.vue";
-import GAppProvider from "./components/GApp/GAppProvider.vue";
 //custom style
 import "./styles/index.scss";
 import { setupVueRouter } from "./router";
@@ -32,9 +31,8 @@ import { setUpErrorhandler } from "./utils/errorHandler";
 import { setupGlobalDirectives } from "./directive";
 //iconify icons
 import "@purge-icons/generated";
+import { setupGlobalPlugin } from "./plugins";
 const app = createApp(App);
-const appProvider = createApp(GAppProvider);
-appProvider.mount("#appProvider");
 //vue router
 setupVueRouter(app);
 //pinia store
@@ -45,4 +43,6 @@ setupI18n(app);
 setUpErrorhandler(app);
 // all directives
 setupGlobalDirectives(app);
+// reg plugins
+setupGlobalPlugin(app);
 app.mount("#app");

@@ -17,19 +17,20 @@
   -->
 
 <template>
-  <n-config-provider
-    abstract
-    :theme-overrides="getNaiveThemeOverrides"
-    :locale="getNaiveLocale"
-    :date-locale="getNaiveDateLocale"
-    :theme="getNaiveDarkTheme"
-  >
-    <g-app-provider>
-      <router-view v-if="!isLocked" />
-      <div v-if="isLocked">
-        <lock-page />
-      </div>
-    </g-app-provider>
+  <n-config-provider abstract :theme-overrides="getNaiveThemeOverrides" :locale="getNaiveLocale"
+    :date-locale="getNaiveDateLocale" :theme="getNaiveDarkTheme">
+    <n-loading-bar-provider>
+      <n-dialog-provider>
+        <n-message-provider placement="top">
+          <n-notification-provider :max="3">
+            <router-view v-if="!isLocked" />
+            <div v-if="isLocked">
+              <lock-page />
+            </div>
+          </n-notification-provider>
+        </n-message-provider>
+      </n-dialog-provider>
+    </n-loading-bar-provider>
   </n-config-provider>
 </template>
 <script setup lang="ts">

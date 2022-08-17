@@ -69,6 +69,7 @@ const footerHeight = getThemeConfig().footerHeight;
 <style lang="scss" scoped>
 .main-layout {
   top: v-bind(headerHeight);
+  margin-top: 1px;
 }
 .content {
   top: v-bind(tabHeight);

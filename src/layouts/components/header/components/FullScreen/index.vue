@@ -17,7 +17,7 @@
   -->
 
 <template>
-  <div @click="toggle">
+  <div @click="onClick">
     <n-tooltip trigger="hover" placement="bottom-start">
       <template #trigger>
         <g-icon :icon="isFullscreen ? SysIcons.ExitFullScreen : SysIcons.fullScreen"></g-icon>
@@ -27,6 +27,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import eventEnum from "@/enum/eventEnum";
 import { SysIcons } from "@/enum/iconEnum";
 const { isFullscreen, toggle } = useFullscreen();
 defineProps({
@@ -35,5 +36,10 @@ defineProps({
     default: 14,
   },
 });
+const onClick = () => {
+  toggle();
+  window.$bus.emit(eventEnum.toggleFullScreen, isFullscreen);
+};
 </script>
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+</style>

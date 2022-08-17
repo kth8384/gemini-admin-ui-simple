@@ -21,6 +21,7 @@ import { store } from "@/store";
 import { SettingStateType } from "typings/store";
 import storage from "@/utils/storage";
 import config from "@/config";
+import eventEnum from "@/enum/eventEnum";
 const storageKey = config.storage.SettingKey;
 export function getLocalStoragePram(key: string, defaultValue: any) {
   let jsonObj = storage.getJsonBase64(storageKey);
@@ -171,6 +172,7 @@ export const useSettingsStore = defineStore({
       console.log("侧边栏折叠", value);
       this.siderCollapsed = value;
       storage.setBase64(storageKey, this.$state);
+      window.$bus.emit(eventEnum.siderCollapsed, value);
     },
     setShowBreadCrumb(value: boolean): void {
       this.showBreadCrumb = value;

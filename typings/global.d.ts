@@ -22,6 +22,7 @@ declare interface Window {
   $message: any;
   $notify: any;
   $dialog: any;
+  $bus: any;
 }
 declare type TargetContext = "_self" | "_blank";
 declare type Nullable<T> = T | null;

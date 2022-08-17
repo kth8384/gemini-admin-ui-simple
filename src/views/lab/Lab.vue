@@ -29,6 +29,7 @@
       <n-space vertical class="mt-xxl">
         <n-text>{{ data.selected.join(",") }}</n-text>
         <n-button type="primary" size="medium" @click="() => { data.selected = [] }">测试</n-button>
+        <n-button type="primary" size="medium" @click="test">测试2</n-button>
       </n-space>
     </n-card>
   </div>
@@ -123,6 +124,23 @@ const onUpdate = (value: any[]) => {
   console.log("update value:", data.selected.join(","));
   console.log("update value1:", value.join(","));
 };
+const test = () => {
+  window.$dialog.warning({
+    title: '警告',
+    content: '你确定？',
+    positiveText: '确定',
+    negativeText: '不确定',
+    onPositiveClick: () => {
+      window.$message.success('确定')
+    },
+    onNegativeClick: () => {
+      window.$message.error('不确定')
+    }
+  })
+}
+tryOnMounted(() => {
+
+})
 </script>
 <style lang="css" scoped>
 </style>
