@@ -67,18 +67,21 @@ const headerHeight = getThemeConfig().headerHeight
   display: flex;
   align-items: center;
   height: v-bind(headerHeight);
+
   .left {
     height: v-bind(headerHeight);
     display: flex;
     align-items: center;
     flex: 1;
   }
+
   .right {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: v-bind(headerHeight);
+
     .item {
       width: 30px;
       height: 100%;
@@ -87,6 +90,7 @@ const headerHeight = getThemeConfig().headerHeight
       justify-content: center;
       align-items: center;
       cursor: pointer;
+
       &:hover {
         background: var(--hover-color);
       }

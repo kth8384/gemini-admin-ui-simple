@@ -25,7 +25,7 @@ import { NotFoundPageRouteSepPage } from ".";
 export function regRouterGuide(router: Router) {
   if (!router) return;
   router.beforeEach(async (to, from, next) => {
-    // nProgress.start();
+    to.params.fromRoute = from as any;
     window.$loadingBar.start();
     const userStore = useUserStoreOutSetUp();
     const token = userStore.getStoredToken();
