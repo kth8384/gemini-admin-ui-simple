@@ -17,91 +17,57 @@
   -->
 
 <template>
-  <n-card v-if="isShow" embedded :bordered="false">
+  <n-card v-if="isShow" embedded :bordered="false" class="animate__animated animate__slideInLeft animate__faster ">
     <template #header>
       <n-h1>{{ $t("views.login.title") }}</n-h1>
     </template>
     <template #header-extra>~~</template>
-    <n-form
-      label-placement="left"
-      :label-width="80"
-      :model="data.form.data"
-      :rules="data.form.rules"
-      size="large"
-      ref="loginFormRef"
-    >
+    <n-form label-placement="left" :label-width="80" :model="data.form.data" :rules="data.form.rules" size="large"
+      ref="loginFormRef">
       <n-form-item path="username">
-        <n-input
-          type="text"
-          autofocus
-          clearable
-          v-model:value="data.form.data.username"
-          :placeholder="$t('views.login.form.label.username')"
-          @keyup.enter="handleLoginBtnClick"
-        />
+        <n-input type="text" autofocus clearable v-model:value="data.form.data.username"
+          :placeholder="$t('views.login.form.label.username')" @keyup.enter="handleLoginBtnClick" />
       </n-form-item>
       <n-form-item path="password">
-        <n-input
-          clearable
-          type="password"
-          v-model:value="data.form.data.password"
-          show-password-on="click"
-          @keydown.enter.prevent
-          :placeholder="$t('views.login.form.label.password')"
-          @keyup.enter="handleLoginBtnClick"
-        />
+        <n-input clearable type="password" v-model:value="data.form.data.password" show-password-on="click"
+          @keydown.enter.prevent :placeholder="$t('views.login.form.label.password')"
+          @keyup.enter="handleLoginBtnClick" />
       </n-form-item>
       <n-form-item>
         <n-input-group>
-          <n-input
-            :placeholder="$t('views.login.form.label.captcha')"
-            :style="{ width: '70%' }"
-            v-model:value="data.form.data.captcha"
-          />
-          <img
-            class="hand"
-            @click="onCaptcha"
-            :style="{ width: '30%' }"
-            src="/static/images/captcha.jpeg"
-            height="40"
-            width="160"
-          />
+          <n-input :placeholder="$t('views.login.form.label.captcha')" :style="{ width: '70%' }"
+            v-model:value="data.form.data.captcha" />
+          <img class="hand" @click="onCaptcha" :style="{ width: '30%' }" src="/static/images/captcha.jpeg" height="40"
+            width="160" />
         </n-input-group>
       </n-form-item>
     </n-form>
     <template #footer>
       <n-space justify="space-between">
-        <n-checkbox
-          v-model:checked="data.form.data.rememberMe"
-        >{{ $t("views.login.form.rememberMe") }}</n-checkbox>
+        <n-checkbox v-model:checked="data.form.data.rememberMe">{{ $t("views.login.form.rememberMe") }}</n-checkbox>
         <n-button text>{{ $t("views.login.forgotPassword") }}</n-button>
       </n-space>
       <n-row class="mt" :gutter="[0, 24]">
         <n-col :span="24">
           <div style="display: flex; justify-content: flex-end">
-            <n-button
-              block
-              type="success"
-              @click="handleLoginBtnClick"
-              attr-type="button"
-            >{{ $t("views.login.form.label.loginBtnText") }}</n-button>
+            <n-button block type="success" @click="handleLoginBtnClick" attr-type="button">{{
+                $t("views.login.form.label.loginBtnText")
+            }}</n-button>
           </div>
         </n-col>
       </n-row>
       <n-space class="mt" justify="space-around">
         <n-button ghost size="small" type="primary">{{ $t("views.login.form.loginByMobile") }}</n-button>
         <n-button ghost size="small" type="primary">{{ $t("views.login.form.loginByQrcode") }}</n-button>
-        <n-button
-          @click.prevent="setLoginState(LoginStateEnum.REGISTER)"
-          size="small"
-          ghost
-          type="primary"
-        >{{ $t("views.login.form.register") }}</n-button>
+        <n-button @click.prevent="setLoginState(LoginStateEnum.REGISTER)" size="small" ghost type="primary">{{
+            $t("views.login.form.register")
+        }}</n-button>
       </n-space>
     </template>
   </n-card>
 </template>
 <script setup lang="ts">
+import "animate.css"
 import { useMessage } from "naive-ui";
 import { useI18n } from "vue-i18n";
 import { useUserStore } from "@/store/modules/user";

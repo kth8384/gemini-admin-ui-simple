@@ -32,7 +32,7 @@
     "skipLibCheck": true,
     // 编译过程中需要引入的库文件的列表。
     "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "naive-ui/volar"],
     // 模块名到基于 baseUrl的路径映射的列表。
     "paths": {
       "@/*": ["./src/*"]

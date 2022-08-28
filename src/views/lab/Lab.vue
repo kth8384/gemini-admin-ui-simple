@@ -31,10 +31,12 @@
         <n-button type="primary" size="medium" @click="() => { data.selected = [] }">测试</n-button>
         <n-button type="primary" size="medium" @click="test">测试2</n-button>
       </n-space>
+      <h1 class="animate__animated animate__backInDown">An animated element</h1>
     </n-card>
   </div>
 </template>
 <script setup lang="ts">
+import 'animate.css';
 const data = reactive({
   selected: [] as string[],
 });

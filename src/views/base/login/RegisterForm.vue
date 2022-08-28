@@ -18,7 +18,7 @@
 
 <!--  -->
 <template>
-  <div v-if="isShow">
+  <div v-if="isShow" class="animate__animated animate__slideInRight animate__faster">
     <n-space vertical>
       <n-h1>我注册</n-h1>
       <n-form>
@@ -32,12 +32,7 @@
           <n-input type="password" @keydown.enter.prevent />
         </n-form-item>
         <n-space justify="space-between">
-          <n-button
-            text
-            type="primary"
-            size="medium"
-            @click="setLoginState(LoginStateEnum.LOGIN)"
-          >已有账号?</n-button>
+          <n-button text type="primary" size="medium" @click="setLoginState(LoginStateEnum.LOGIN)">已有账号?</n-button>
           <n-button type="primary">注册</n-button>
         </n-space>
       </n-form>
@@ -46,9 +41,11 @@
 </template>
 
 <script setup lang="ts">
+import 'animate.css'
 import { computed, unref } from 'vue';
 import { useLoginState, LoginStateEnum } from './index';
 const { setLoginState, getLoginState } = useLoginState();
 const isShow = computed(() => unref(getLoginState) === LoginStateEnum.REGISTER);
 </script>
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+</style>
