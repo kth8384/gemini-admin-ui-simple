@@ -74,10 +74,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { getAppConfig, getPackageConfig } from '@/config';
+import { getPackageConfig } from '@/config';
 const devDependecies: any = getPackageConfig().devDependencies;
 const prodDependecies: any = getPackageConfig().dependencies;
-const appName = `${getAppConfig().VITE_APP_NAME}(${getPackageConfig().version})`;
+const appName = `${getPackageConfig().name}(${getPackageConfig().version})`;
 const data = {
   devs: <any>[],
   prods: <any>[],

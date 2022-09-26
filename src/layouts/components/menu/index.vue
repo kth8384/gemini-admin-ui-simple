@@ -17,9 +17,9 @@
   -->
 
 <template>
-  <n-menu accordion :collapsed-width="settings.siderCollapsedWidth" :collapsed-icon-size="22"
+  <n-menu ref="menuInstRef" accordion :collapsed-width="settings.siderCollapsedWidth" :collapsed-icon-size="22"
     :options="routerStore.getMenus" :render-icon="renderMenuIcon" key-field="name" label-field="name"
-    :value="selectedMenu" children-field="children" :indent="16" :render-label="renderMenuLabel"
+    :value="data.selectedKey" children-field="children" :indent="16" :render-label="renderMenuLabel"
     :render-extra="renderMenuExtra" @update:value="onMenuSelect" />
 </template>
 <script setup lang="ts">
@@ -27,6 +27,8 @@ import { useSettingsStore } from "@/store/modules/settings";
 import { useRouterStore } from "@/store/modules/router";
 import { renderMenuIcon, renderMenuLabel, renderMenuExtra } from "./menuHelper";
 import { openWindow } from "@/utils";
+import { MenuInst } from "naive-ui";
+const menuInstRef = ref<MenuInst | null>(null);
 const settings = useSettingsStore();
 const routerStore = useRouterStore();
 const router = useRouter();
@@ -56,9 +58,16 @@ const onMenuSelect = (key: string, item: any) => {
 
   }
 };
-const selectedMenu = computed(() => {
-  return currentRoute.name as string;
+const data = reactive({
+  selectedKey: currentRoute.name as string
 })
+watch(
+  () => currentRoute.name,
+  (value) => {
+    data.selectedKey = value as string
+    menuInstRef.value?.showOption(value as string);
+  }, { immediate: true }
+)
 onMounted(() => {
 });
 </script>
