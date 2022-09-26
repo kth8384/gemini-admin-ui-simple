@@ -21,12 +21,9 @@
         <n-message-provider>
             <n-layout>
                 <div class="login-container">
-                    <div
-                        class="left"
-                        :style="{
-                            backgroundImage: 'url(' + '/static/images/bgs/' + leftBgImage + ')',
-                        }"
-                    >
+                    <div class="left" :style="{
+                        backgroundImage: 'url(' + '/static/images/bgs/' + leftBgImage + ')',
+                    }">
                         <div class="logo">
                             <n-space>
                                 <g-logo-svg :size="50"></g-logo-svg>
@@ -34,9 +31,10 @@
                             </n-space>
                         </div>
                         <div class="bottom">
-                            <span class="text" :style="{ color: themeVars.primaryColor }">
+                            <!-- <span class="text" :style="{ color: themeVars.primaryColor }">
                                 <span>Copyright ©{{ new Date().getFullYear() }} {{ appName }}</span>
-                            </span>
+                            </span> -->
+                            <footer-detail></footer-detail>
                         </div>
                     </div>
                     <div class="right">
@@ -69,12 +67,11 @@
 import { GLanguage, GDarkTheme, GLogoSvg } from "@/layouts/components/header/components";
 import LoginForm from "./LoginForm.vue";
 import RegisterForm from "./RegisterForm.vue";
-import { useThemeVars } from "naive-ui";
 import { useNaive } from "@/hooks/useNaive";
 import { useSettingsStore } from "@/store/modules/settings";
 import { getAppConfig } from "@/config";
+import FooterDetail from "@/layouts/components/footer/FooterDetail.vue";
 const { getNaiveThemeOverrides } = useNaive();
-const themeVars = useThemeVars();
 const settingStore = useSettingsStore();
 const leftBgImage = computed(() => {
     return settingStore.darkTheme ? "3.svg" : "4.svg";
@@ -90,6 +87,7 @@ const appName = getAppConfig().VITE_APP_NAME
     padding: 0;
     display: flex;
     flex-direction: row;
+
     .left {
         flex: 2;
         width: 100%;
@@ -100,6 +98,7 @@ const appName = getAppConfig().VITE_APP_NAME
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+
         .logo {
             flex: 1;
             height: 50px;
@@ -110,19 +109,21 @@ const appName = getAppConfig().VITE_APP_NAME
             flex-direction: row;
             padding: 2rem;
         }
+
         .bottom {
             height: 50px;
+            width: 50%;
             background: transparent;
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            .text {
-                position: fixed;
-                bottom: 0;
-            }
+            position: fixed;
+            bottom: 0;
+
         }
     }
+
     .right {
         flex: 3;
         height: 100vh;
@@ -131,6 +132,7 @@ const appName = getAppConfig().VITE_APP_NAME
         justify-content: center;
         align-items: center;
         background: transparent;
+
         .header {
             width: 100%;
             flex: 1;
@@ -138,11 +140,13 @@ const appName = getAppConfig().VITE_APP_NAME
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
+
             div {
                 margin-right: 2rem;
                 cursor: pointer;
             }
         }
+
         .content {
             width: 100%;
             flex: 8;
@@ -150,25 +154,31 @@ const appName = getAppConfig().VITE_APP_NAME
             align-items: center;
             flex-direction: row;
             justify-content: center;
+
             .comp-container {
                 width: 50%;
                 height: auto;
             }
         }
+
         .footer {
             width: 100%;
             flex: 2;
         }
     }
+
     .bg-green {
         background: green;
     }
+
     .bg-reb {
         background-color: rebeccapurple;
     }
+
     .bg-black {
         background: black;
     }
+
     @media only screen and (max-width: 900px) {
         .left {
             display: none !important;

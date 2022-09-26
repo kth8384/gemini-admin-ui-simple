@@ -21,9 +21,8 @@
     <n-card size="small">
       <template #header>
         <n-h1>
-          <n-gradient-text
-            gradient="linear-gradient(90deg, red 10%, green 30%, blue 80%)"
-          >{{ appName }}</n-gradient-text>
+          <n-gradient-text gradient="linear-gradient(90deg, red 10%, green 30%, blue 80%)">{{ appName }}
+          </n-gradient-text>
         </n-h1>
       </template>
       <n-space>
@@ -57,24 +56,16 @@
     <div class="view-content">
       <n-card :title="`开发环境依赖(${data.devs.length})`" size="small">
         <n-descriptions size="small" label-placement="left" bordered :column="3">
-          <n-descriptions-item
-            v-for="item,index in data.devs"
-            :key="index"
-            :label="item.name"
-            :label-style="{ fontWeight: 900 }"
-          >
+          <n-descriptions-item v-for="item, index in data.devs" :key="index" :label="item.name"
+            :label-style="{ fontWeight: 900 }">
             <n-text type="primary">{{ item.version }}</n-text>
           </n-descriptions-item>
         </n-descriptions>
       </n-card>
       <n-card class="mt" :title="`生产环境依赖(${data.prods.length})`" size="small">
         <n-descriptions size="small" label-placement="left" bordered :column="3">
-          <n-descriptions-item
-            v-for="item,index in data.prods"
-            :key="index"
-            :label="item.name"
-            :label-style="{ fontWeight: 900 }"
-          >
+          <n-descriptions-item v-for="item, index in data.prods" :key="index" :label="item.name"
+            :label-style="{ fontWeight: 900 }">
             <n-text type="primary">{{ item.version }}</n-text>
           </n-descriptions-item>
         </n-descriptions>
@@ -83,11 +74,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { getAppConfig } from '@/config';
-import packageJson from '../../package.json'
-const devDependecies: any = packageJson.devDependencies;
-const prodDependecies: any = packageJson.dependencies;
-const appName = `${getAppConfig().VITE_APP_NAME}(${packageJson.version})`;
+import { getAppConfig, getPackageConfig } from '@/config';
+const devDependecies: any = getPackageConfig().devDependencies;
+const prodDependecies: any = getPackageConfig().dependencies;
+const appName = `${getAppConfig().VITE_APP_NAME}(${getPackageConfig().version})`;
 const data = {
   devs: <any>[],
   prods: <any>[],
@@ -105,4 +95,5 @@ Object.keys(devDependecies).map((key) => {
   })
 })
 </script>
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+</style>

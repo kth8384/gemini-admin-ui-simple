@@ -29,8 +29,6 @@ import { setupPiniaStore } from "./store";
 import { setupI18n } from "./locales";
 import { setUpErrorhandler } from "./utils/errorHandler";
 import { setupGlobalDirectives } from "./directive";
-//iconify icons
-import "@purge-icons/generated";
 import { setupGlobalPlugin } from "./plugins";
 const app = createApp(App);
 //vue router

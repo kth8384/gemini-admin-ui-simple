@@ -18,18 +18,14 @@
 
 <template>
   <SvgIcon :size="size" :name="getSvgIcon" v-if="isSvgIcon" :class="[$attrs.class]" :spin="spin" />
-  <span
-    v-else
-    ref="iconElRef"
-    :class="[$attrs.class, 'app-iconify', spin && 'app-iconify-spin']"
-    :style="getWrapStyle"
-  ></span>
+  <span v-else ref="iconElRef" :class="[$attrs.class, 'app-iconify', spin && 'app-iconify-spin']"
+    :style="getWrapStyle"></span>
 </template>
 <script lang="ts">
 import type { PropType } from "vue";
 import { CSSProperties } from "vue";
 import SvgIcon from "./GSvgIcon.vue";
-import Iconify from "@iconify/iconify";
+import Iconify from "@purge-icons/generated";
 import { propDefine } from "@/utils/propsDefine";
 import { isString } from "@/utils/assert";
 
@@ -102,6 +98,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .app-iconify {
   display: inline-block;
+
   &-spin {
     -webkit-animation: spin 2s infinite linear;
     animation: spin 2s infinite linear;
@@ -109,11 +106,13 @@ export default defineComponent({
     // animation: spin 1s infinite steps(8);
   }
 }
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -125,11 +124,13 @@ export default defineComponent({
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+
 span.iconify {
   display: block;
   min-width: 1em;

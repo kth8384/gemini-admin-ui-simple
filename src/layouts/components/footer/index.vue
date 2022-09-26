@@ -19,18 +19,15 @@
 <template>
   <n-layout-footer v-if="settings.showFooter" :inverted="settings.darkFooter">
     <footer class="footer-container">
-      Copyright © {{ year }} {{ appName }} By:
-      <n-a target="_blank" :href="packageJson.author.url">{{ packageJson.author.name }}</n-a>
+      <footer-detail></footer-detail>
     </footer>
   </n-layout-footer>
 </template>
 <script setup lang="ts">
-import { getAppConfig, getThemeConfig } from '@/config';
+import { getThemeConfig } from '@/config';
 import { useSettingsStore } from '@/store/modules/settings';
-import packageJson from '../../../../package.json';
-const year = new Date().getFullYear();
+import FooterDetail from './FooterDetail.vue';
 const settings = useSettingsStore();
-const appName = getAppConfig().VITE_APP_NAME;
 const footerHeight = getThemeConfig().footerHeight
 </script>
 <style lang="scss" scoped>

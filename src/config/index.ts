@@ -15,7 +15,7 @@
  *  *    limitations under the License.
  *
  */
-
+import packageJson from "../../package.json";
 import app from "./app";
 import storage from "./storage";
 import network from "./network";
@@ -34,7 +34,12 @@ export function getAppConfig() {
   ///app.config.js 里的 window.GEMINI_GLOBAL_CONFIG
   const CONFIG_PARAM_NAME = "GEMINI_GLOBAL_CONFIG";
   const envConf = window[CONFIG_PARAM_NAME as any] as unknown as EnvConfigType;
-  const { VITE_APP_NAME, VITE_SERVER_ROUTE, VITE_RECORD_LAST_ROUTE, VITE_API_BASE_URL } = envConf;
+  const {
+    VITE_APP_NAME,
+    VITE_SERVER_ROUTE,
+    VITE_RECORD_LAST_ROUTE,
+    VITE_API_BASE_URL,
+  } = envConf;
   return {
     VITE_APP_NAME,
     VITE_SERVER_ROUTE,
@@ -44,4 +49,13 @@ export function getAppConfig() {
 }
 export function getThemeConfig() {
   return theme;
+}
+/**
+ * @description: get package.json content
+ * @return {*}
+ */
+export function getPackageConfig() {
+  return {
+    ...packageJson,
+  };
 }
